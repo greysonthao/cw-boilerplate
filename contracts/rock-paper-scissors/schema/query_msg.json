@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QueryMsg",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "get_game_by_host_and_opponent"
+      ],
+      "properties": {
+        "get_game_by_host_and_opponent": {
+          "type": "object",
+          "required": [
+            "host",
+            "opponent"
+          ],
+          "properties": {
+            "host": {
+              "type": "string"
+            },
+            "opponent": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "get_games_by_host"
+      ],
+      "properties": {
+        "get_games_by_host": {
+          "type": "object",
+          "required": [
+            "host"
+          ],
+          "properties": {
+            "host": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  ]
+}

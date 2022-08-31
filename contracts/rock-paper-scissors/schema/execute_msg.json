@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ExecuteMsg",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "start_game"
+      ],
+      "properties": {
+        "start_game": {
+          "type": "object",
+          "required": [
+            "host_move",
+            "opponent"
+          ],
+          "properties": {
+            "host_move": {
+              "$ref": "#/definitions/GameMove"
+            },
+            "opponent": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "opponent_response"
+      ],
+      "properties": {
+        "opponent_response": {
+          "type": "object",
+          "required": [
+            "host",
+            "opp_move"
+          ],
+          "properties": {
+            "host": {
+              "type": "string"
+            },
+            "opp_move": {
+              "$ref": "#/definitions/GameMove"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  ],
+  "definitions": {
+    "GameMove": {
+      "type": "string",
+      "enum": [
+        "Rock",
+        "Paper",
+        "Scissors"
+      ]
+    }
+  }
+}

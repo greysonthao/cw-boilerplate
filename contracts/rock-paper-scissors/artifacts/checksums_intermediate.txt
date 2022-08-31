@@ -1,0 +1,1 @@
+797fd441d54904b534279f1efdf72b35107d46d2abf44c5e3baf3e5f56a2c174  ./target/wasm32-unknown-unknown/release/rock_paper_scissors.wasm
